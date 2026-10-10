@@ -159,9 +159,6 @@ footer{padding:28px 0 44px;color:var(--muted);font-size:14px}footer .wrap{displa
 .tblwrap{overflow-x:auto}.fmt{width:100%;border-collapse:collapse;font-size:14px;min-width:700px}.fmt th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-2);padding:10px 12px;border-bottom:2px solid var(--line)}.fmt td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--muted)}.fmt td b{color:var(--ink)}
 
 /* v7 alignment fixes */
-.path div{justify-content:flex-start}
-.path span{margin-top:auto}
-.path h3{min-height:2.4em}
 .jstep{display:flex;flex-direction:column}
 .jstep .mini{flex:none}
 .mini .scr{height:252px;min-height:0;overflow:hidden}
@@ -183,3 +180,11 @@ footer{padding:28px 0 44px;color:var(--muted);font-size:14px}footer .wrap{displa
 /* v11 */
 .journey .jstep{min-width:0}
 .jstep .mini,.jstep .scr{min-width:0}
+
+/* v12: path cards, no shrink, no overlap */
+.path{display:grid}
+.path div{position:relative;z-index:1;padding:26px;display:flex;flex-direction:column;justify-content:flex-start;gap:0;height:auto;min-height:300px}
+.path div>*{flex:0 0 auto;min-height:0}
+.path h3{margin:0 0 10px;font-size:22px;line-height:1.25}
+.path p{margin:0 0 16px}
+.path span{margin-top:auto}
