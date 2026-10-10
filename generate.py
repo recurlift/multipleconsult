@@ -174,7 +174,7 @@ def head(title,desc,root=''):
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(title)}</title><meta name="description" content="{E(desc)}">
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}">
-<link rel="icon" href="{FAV}"><link rel="stylesheet" href="{root}style.css?v=10"></head><body>
+<link rel="icon" href="{FAV}"><link rel="stylesheet" href="{root}style.css?v=11"></head><body>
 <header class="top"><div class="wrap"><a class="brand" href="{root}index.html" aria-label="Multiple Consult home">{LOGO}Multiple Consult</a>
 <nav class="nav" aria-label="Main"><a href="{root}index.html#journey">How it works</a>{menu(root)}<a href="{root}creators.html">For creators</a><a href="{root}index.html#pricing">Pricing</a><a href="{root}index.html#faq">FAQ</a><a class="cta" href="{root}index.html#contact">Map my workflow</a></nav></div></header>
 <main id="top">'''
