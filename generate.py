@@ -174,7 +174,7 @@ def head(title,desc,root=''):
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(title)}</title><meta name="description" content="{E(desc)}">
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}">
-<link rel="icon" href="{FAV}"><link rel="stylesheet" href="{root}style.css?v=8"></head><body>
+<link rel="icon" href="{FAV}"><link rel="stylesheet" href="{root}style.css?v=9"></head><body>
 <header class="top"><div class="wrap"><a class="brand" href="{root}index.html" aria-label="Multiple Consult home">{LOGO}Multiple Consult</a>
 <nav class="nav" aria-label="Main"><a href="{root}index.html#journey">How it works</a>{menu(root)}<a href="{root}creators.html">For creators</a><a href="{root}index.html#pricing">Pricing</a><a href="{root}index.html#faq">FAQ</a><a class="cta" href="{root}index.html#contact">Map my workflow</a></nav></div></header>
 <main id="top">'''
@@ -209,7 +209,7 @@ def integ_block(rows):
     return '<section class="alt"><div class="wrap"><p class="eyebrow">What this workflow needs from your current tools</p><h2>Nothing is replaced. These are the connections we confirm in the scope.</h2><div class="integ">'+''.join(f'<div><b>{E(k)}</b><p>{E(v)}</p></div>' for k,v in rows)+'</div></div></section>'
 def demo_block(u):
     d=u['demo']; slug=u['slug']
-    inputs=f'<label for="{slug}-name">Your name</label><input id="{slug}-name" data-f="name" value="{E(d["name"])}">'
+    inputs=f'<div class="fld"><label for="{slug}-name">Your name</label><input id="{slug}-name" data-f="name" value="{E(d["name"])}"></div>'
     for fld in d['fields']:
         fid,label,typ,opts,ex=fld[:5]; show=fld[5] if len(fld)>5 else None
         attr=f' data-show="{E(show)}"' if show else ''
@@ -354,10 +354,10 @@ def creator_demo():
     wait='Your sample will appear here as a tagged insight, a small test, a draft reply and the member next step.'
     return f'''<section id="try" class="alt"><div class="wrap"><p class="eyebrow">Try it</p><h2>Run one audience question through the system.</h2><p class="sub">Browser only. Nothing is sent or stored. Example operating flow, not proof of audience demand or sales.</p>
 <div class="demo"><form class="dform" data-demo="creators" data-cfg='{E(json.dumps(cfg,ensure_ascii=False),quote=True)}' onsubmit="return false"><h3>Sample audience signal</h3><p class="sub">Change any value, then run it. Permission and audience stage change the outcome.</p>
-<label for="cr-q">Audience question</label><input id="cr-q" data-f="q" value="How do I price my first consulting package?">
-<label for="cr-src">Source</label><select id="cr-src" data-f="src"><option>Weekly Q&amp;A</option><option>Poll</option><option>Support message</option><option>Call notes</option></select>
-<label for="cr-stage">Audience stage</label><select id="cr-stage" data-f="stage"><option>Has expertise, no packaged offer</option><option>Just starting</option><option>Already selling, needs a better next offer</option></select>
-<label for="cr-perm">Permission</label><select id="cr-perm" data-f="perm"><option>Approved for anonymised research</option><option>Not yet approved</option></select>
+<div class="fld"><label for="cr-q">Audience question</label><input id="cr-q" data-f="q" value="How do I price my first consulting package?"></div>
+<div class="fld"><label for="cr-src">Source</label><select id="cr-src" data-f="src"><option>Weekly Q&amp;A</option><option>Poll</option><option>Support message</option><option>Call notes</option></select></div>
+<div class="fld"><label for="cr-stage">Audience stage</label><select id="cr-stage" data-f="stage"><option>Has expertise, no packaged offer</option><option>Just starting</option><option>Already selling, needs a better next offer</option></select></div>
+<div class="fld"><label for="cr-perm">Permission</label><select id="cr-perm" data-f="perm"><option>Approved for anonymised research</option><option>Not yet approved</option></select></div>
 <button type="button" class="go">Run sample</button><button type="button" class="reset" style="display:none">Reset</button></form>
 <div class="dout" data-wait="{wait}"><div class="dwait">{wait}</div></div></div>{ILLUS_CR}</div></section>'''
 cr = head('For creators | Turn what your audience keeps asking into products they can use','An audience-to-product operating system for creators: listen to authorised audience signals, find the repeated job, choose the smallest credible offer, deliver it in a branded member experience, and learn what to change next.')
