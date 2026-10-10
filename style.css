@@ -53,4 +53,4 @@ summary::-webkit-details-marker{display:none}summary::after{content:"+";font-siz
 .contact h2{color:#fff}.contact p{color:#dbe4f3}.contact address{font-style:normal;line-height:1.7;color:#fff}.contact a{color:var(--amber);font-weight:700;word-break:break-all}.contact .btn{color:#1a1a1a;word-break:normal}
 .crumb{font-size:14px;color:#dbe4f3;margin-bottom:14px}.crumb a{color:#fff}
 footer{padding:28px 0 44px;color:var(--muted);font-size:14px}footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
-@media(max-width:640px){.nav a:not(.cta){display:none}.hero .wrap{padding:84px 0 36px}.btn{width:100%;justify-content:center}}
+@media(max-width:640px){.uc-grid{grid-template-columns:1fr 1fr;gap:12px}.uc{aspect-ratio:1}.uc span{font-size:15px;left:12px;right:12px;bottom:12px}.uc small{display:none}.uc.text{padding:12px}.uc.text svg{width:28px;height:28px;top:12px;left:12px}.nav a:not(.cta){display:none}.hero .wrap{padding:84px 0 36px}.btn{width:100%;justify-content:center}}
