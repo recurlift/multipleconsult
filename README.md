@@ -1,3 +1,3 @@
-# Multiple Consult, one-page site
+# Multiple Consult, static site
 
-Static site for multipleconsult.info. Deploy by dragging this folder (index.html plus img/) into Netlify Drop, or push to GitHub Pages. No build step. Photos are from Pexels under the Pexels licence (free commercial use, no attribution required).
+Home page (`index.html`), shared `style.css`, and one use-case page per segment (`roofing.html`, `hvac.html`, `plumbing.html`, `restoration.html`, `remodeling.html`, `windows-doors-siding.html`, `landscape.html`, `foundation.html`, `salons-barbers.html`, `retail.html`, `auto-repair.html`). Deploy by dragging this folder into Netlify Drop; Netlify serves `/roofing` for `roofing.html`. No build step. Photos: Pexels licence (free commercial use).
