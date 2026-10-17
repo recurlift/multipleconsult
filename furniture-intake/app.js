@@ -1,3 +1,4 @@
+(() => {
 const { KEY, STATUSES, samples, missing, filterRequests, loadRecords } = globalThis.FurnitureModel;
 
 const $ = id => document.getElementById(id);
@@ -116,3 +117,4 @@ for (const id of ['status-filter', 'readiness-filter']) $(id).addEventListener('
 $('reset').addEventListener('click', () => { if (!confirm('Reset the queue to synthetic sample requests? Browser-local additions and status changes will be removed.')) return; records = structuredClone(samples); try { storage.removeItem(KEY); } catch {} renderQueue(); });
 $('export').addEventListener('click', () => { const blob = new Blob([JSON.stringify({ prototype: true, exportedAt: new Date().toISOString(), requests: records }, null, 2)], { type: 'application/json' }); const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = 'furniture-estimate-demo.json'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); });
 renderChecklist();
+})();
